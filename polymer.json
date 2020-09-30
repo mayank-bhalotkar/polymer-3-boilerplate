@@ -1,0 +1,37 @@
+{
+    "root": "~/polymer-3-boilerplate",
+    "entrypoint": "index.html",
+    "shell": "app.js",
+    "sources": [
+     "app.js",
+     "manifest/**",
+     "package.json"
+    ],
+    "extraDependencies": [
+      "manifest.json",
+      "node_modules/@webcomponents/webcomponentsjs/**"
+    ],
+    "moduleResolution": "node",
+    "npm": true,
+    "builds": [
+      { 
+        "name": "es5prod",
+        "preset": "es5-bundled",
+        "addServiceWorker": true
+      },
+      { 
+        "name": "es6prod",
+        "preset": "es6-unbundled",
+        "addServiceWorker": true
+      },
+      { 
+        "name": "dev",
+        "addServiceWorker": false,
+        "js": {"minify": false, "compile": false},
+        "css": {"minify": false},
+        "html": {"minify": false},
+        "bundle": false,
+        "addPushManifest": false
+      }
+    ]
+  }

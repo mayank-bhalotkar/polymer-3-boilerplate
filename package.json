@@ -1,0 +1,16 @@
+{
+    "name": "polymer-3-boilerplate",
+    "version": "1.0.0",
+    "description": "starter kit for polymer 3 application",
+    "main": "app.js",
+    "directories": {
+      "test": "test"
+    },
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": ["boilerplate", "polymer 3", "polymer-boilerplate"],
+    "author": "Mayank Bhalotkar",
+    "license": "MIT",
+    "homepage": "https://github.com/mayank-bhalotkar/polymer-3-boilerplate"
+  }

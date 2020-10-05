@@ -1,5 +1,5 @@
 {
-    "root": "~/polymer-3-boilerplate",
+    "root": "",
     "entrypoint": "index.html",
     "shell": "app.js",
     "sources": [

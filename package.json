@@ -1,16 +1,36 @@
 {
-    "name": "polymer-3-boilerplate",
-    "version": "1.0.0",
-    "description": "starter kit for polymer 3 application",
-    "main": "app.js",
-    "directories": {
-      "test": "test"
-    },
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": ["boilerplate", "polymer 3", "polymer-boilerplate"],
-    "author": "Mayank Bhalotkar",
-    "license": "MIT",
-    "homepage": "https://github.com/mayank-bhalotkar/polymer-3-boilerplate"
+  "name": "polymer-3-boilerplate",
+  "version": "1.0.0",
+  "description": "starter kit for polymer 3 application",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "boilerplate",
+    "polymer 3",
+    "polymer-boilerplate"
+  ],
+  "author": "Mayank Bhalotkar",
+  "license": "MIT",
+  "homepage": "https://github.com/mayank-bhalotkar/polymer-3-boilerplate",
+  "dependencies": {
+    "@polymer/iron-icon": "^3.0.1",
+    "@polymer/paper-button": "^3.0.1",
+    "@polymer/polymer": "^3.4.1",
+    "axios": "^0.20.0",
+    "bootstrap": "^4.5.2",
+    "lit-element": "^2.4.0",
+    "lodash": "^4.17.20",
+    "moment": "^2.29.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
   }
+}

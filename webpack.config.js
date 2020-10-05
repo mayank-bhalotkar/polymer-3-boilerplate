@@ -1,52 +1,51 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 module.exports = {
-    entry: 'app.js',
+    entry: './app-data.js',
     output: {
-        path: path.join(__dirname, 'dist'),
-        filename: '[name].bundle.js'
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: "/"
     },
     mode: "development",
+    devtool: "source-map",
     optimization: {
         minimize: true,
-        minimizer: [
-            // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
-            // `...`
-            new CssMinimizerPlugin(),
-        ],
     },
     resolve: {
         extensions: ['.js'],
         modules: ['node_modules']
     },
     module: {
-        loaders: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader',
-                query: {
-                    presets: ['es2015', 'react']
-                }
-            }
-        ],
         rules: [
             {
-                test: /.s?css$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+                test: /\.js$/,
+                loader: 'babel-loader'
+            },
+            {
+                test: /\.(png|svg|jpg|gif|ico)$/,
+                use: [{
+                    loader: 'file-loader',
+                }
+                ],
             },
         ]
     },
+    devServer: {
+        open: true,
+        contentBase: path.join(__dirname, 'dist'),
+        writeToDisk: true,
+        port: 9000
+    },
     plugins: [
         new CleanWebpackPlugin(),
-        new CompressionPlugin(),
+        new FaviconsWebpackPlugin('./favicon.ico'),
         new HtmlWebpackPlugin({
-            template: './index.html',
-            filename: "index.html"
+            filename: "index.html",
+            template: './index.html'
         })
     ]
 };

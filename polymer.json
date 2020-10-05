@@ -3,7 +3,7 @@
     "entrypoint": "index.html",
     "shell": "app.js",
     "sources": [
-     "app.js",
+     "app-data.js",
      "manifest/**",
      "package.json"
     ],

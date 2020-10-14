@@ -5,9 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 class AppData extends LitElement {
     static get properties() {
-        return {
-
-        }
+        return {}
     }
 
     constructor() {
@@ -73,11 +71,14 @@ class AppData extends LitElement {
                     flex-direction: column;
                     margin: 20px;
                     padding: 40px;
-                    background: grey;
+                    background: rgb(89, 153, 25);
                     color: rgba(0,0,0,.87);
                     transition: 0.4s transform;
                     will-change: transform;
                     transform: scale(1);
+                    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+                    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+                    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
                 }
 
                 .home p {
@@ -95,7 +96,7 @@ class AppData extends LitElement {
                 .grid-system h3,
                 .grid-system p {
                     text-align: center;
-                    color: #ffffff;
+                    color: #000;
                 }
 
                 .desc p {
@@ -103,6 +104,12 @@ class AppData extends LitElement {
                     text-align: center;
                     width: 100%;
                     font-size: 25px;
+                }
+
+                @media(max-width: 786px) {
+                    .grid-system {
+                        display: block;
+                    }
                 }
   
             `,
@@ -153,8 +160,8 @@ class AppData extends LitElement {
                             </div>
                             <div class="grid-6">
                                 <a href="https://getbootstrap.com/docs/4.5/getting-started/introduction/" target="_blank">
-                                    <h3>Bootstrap</h3>
-                                    <p>Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                                    <h3>Responsive Design</h3>
+                                    <p>This template is completely responsive.</p>
                                 </a>
                             </div>
                         </div>

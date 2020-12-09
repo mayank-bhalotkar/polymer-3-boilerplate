@@ -1,16 +1,31 @@
 import { LitElement, html, css } from 'lit-element';
 import { globalCSS } from "./src/global";
 import 'bootstrap/dist/css/bootstrap.css';
+import { connect } from 'pwa-helpers/connect-mixin.js';
+import { store } from "./src/store"
+import { homePageData } from './src/redux/actions/homepage-actions';
+import _ from 'lodash';
 
 
-class AppData extends LitElement {
+class AppData extends connect(store)(LitElement) {
     static get properties() {
-        return {}
+        return {
+            homepageContent: { type: Array }
+        }
+    }
+
+    firstUpdated() {
+        store.dispatch(homePageData());
     }
 
     constructor() {
         super();
+        this.homepageContent = [];
     }
+
+    stateChanged(state) {
+        this.homepageContent = state.homepageReducer.data;
+    } 
 
     static get styles() {
         return [
@@ -128,42 +143,18 @@ class AppData extends LitElement {
                     </div>
                     <div class="row">
                         <div class="grid-system">
-                            <div class="grid-1">
-                                <a href="https://polymer-library.polymer-project.org/3.0/docs/about_30" target="_blank">
-                                    <h3>Polymer 3</h3>
-                                    <p>The Polymer library provides a set of features for creating custom elements. These features are designed to make it easier and faster to make custom elements that work like standard DOM elements.</p>
-                                </a>
-                            </div>
-                            <div class="grid-2">
-                                <a href="https://lit-element.polymer-project.org/" target="_blank">
-                                    <h3>Lit Elements</h3>
-                                    <p>LitElement makes it easy to define Web Components – ideal for sharing elements across your organization or building a UI design system.</p>
-                                </a>
-                            </div>
-                            <div class="grid-3">
-                                <a href="https://redux.js.org/introduction/getting-started" target="_blank">
-                                    <h3>Redux</h3>
-                                    <p>Redux is a predictable state container for JavaScript apps.It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.</p>
-                                </a>
-                            </div>
-                            <div class="grid-4">
-                                <a href="https://webpack.js.org/concepts/" target="_blank">
-                                    <h3>Webpack</h3>
-                                    <p>Webpack is used to compile JavaScript modules. Once installed, you can interface with webpack either from its CLI or API.</p>
-                                </a>
-                            </div>
-                            <div class="grid-5">
-                                <a href="https://lodash.com/docs/4.17.15" target="_blank">
-                                    <h3>Lodash</h3>
-                                    <p>Lodash makes JavaScript easier by taking the hassle out of working with arrays, numbers, objects, strings, etc.</p>
-                                </a>
-                            </div>
-                            <div class="grid-6">
-                                <a href="https://getbootstrap.com/docs/4.5/getting-started/introduction/" target="_blank">
-                                    <h3>Responsive Design</h3>
-                                    <p>This template is completely responsive.</p>
-                                </a>
-                            </div>
+                            ${
+                                !_.isEmpty(this.homepageContent) 
+                                ? html `${this.homepageContent.map(item => {
+                                    return html `<div class="grid-1">
+                                    <a href="${item.link}" target="_blank">
+                                        <h3>${item.name}</h3>
+                                        <p>${item.description}</p>
+                                    </a>
+                                </div>`
+                                })} ` 
+                                : html `<p>Loading...</p>` 
+                            }
                         </div>
                     </div>
                     

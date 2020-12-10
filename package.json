@@ -1,5 +1,5 @@
 {
-  "name": "@mbhalotkar/polymer-3-boilerplate",
+  "name": "polymer-3-boilerplate",
   "version": "1.0.0",
   "description": "starter kit for polymer 3 application",
   "main": "app.js",

@@ -18,9 +18,12 @@ This boilerplate includes following technologies:
 
 ## How to install package
 
-### DO NOT USE npm i polymer-3-boilerplate
+### DO NOT USE 
+```sh
+   npm i polymer-3-boilerplate
+   ```
 
-## run following command
+## Run following command -
 ```sh
    npx polymer-3-boilerplate
    cd polymer-3-boilerplate

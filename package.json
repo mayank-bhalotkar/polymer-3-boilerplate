@@ -10,6 +10,9 @@
     "build": "webpack --config webpack.config.js",
     "start": "webpack-dev-server --config webpack.config.js"
   },
+  "bin": {
+    "polymer-3-boilerplate": "git clone https://github.com/mayank-bhalotkar/polymer-3-boilerplate"
+  },
   "keywords": [
     "boilerplate",
     "polymer 3",

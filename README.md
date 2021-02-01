@@ -4,7 +4,7 @@ Polymer 3 boilerplate comes with basic webpack configuration which every develop
 
 You can install this boilerplate on any platform.
 
-![Boilerplate Screenshot](https://ibb.co/6DkPNDS)
+![Boilerplate Screenshot](https://imgur.com/F1ZZDqg)
 
 ## Quick Overview
 

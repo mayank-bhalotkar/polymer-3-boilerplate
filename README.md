@@ -4,6 +4,8 @@ Polymer 3 boilerplate comes with basic webpack configuration which every develop
 
 You can install this boilerplate on any platform.
 
+![Boilerplate Screenshot](https://ibb.co/6DkPNDS)
+
 ## Quick Overview
 
 This boilerplate includes following technologies:
@@ -14,3 +16,14 @@ This boilerplate includes following technologies:
 * [Webpack](https://webpack.js.org/concepts/)
 * [Lodash](https://lodash.com/docs/4.17.15)
 
+## How to install package
+
+### DO NOT USE npm i polymer-3-boilerplate
+
+## run following command
+```sh
+   npx polymer-3-boilerplate
+   cd polymer-3-boilerplate
+   npm install
+   npm start
+   ```

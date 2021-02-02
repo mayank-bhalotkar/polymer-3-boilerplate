@@ -23,7 +23,7 @@ This boilerplate includes following technologies:
    npm i polymer-3-boilerplate
    ```
 
-## Run following command -
+## Run following command
 ```sh
    npx polymer-3-boilerplate
    cd polymer-3-boilerplate

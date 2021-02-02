@@ -1,6 +1,6 @@
 {
   "name": "polymer-3-boilerplate",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "starter kit for polymer 3 application",
   "main": "app.js",
   "directories": {
